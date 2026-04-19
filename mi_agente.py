@@ -1,12 +1,4 @@
-"""
-mi_agente.py — Agente Basado en Utilidad con A*
-=================================================
-Medida de utilidad : minimizar número de pasos.
-Algoritmo          : A* sobre mapa construido al explorar.
-Heurística         : distancia Manhattan (admisible).
-Anti-bucle         : celdas visitadas tienen costo extra en A*.
-Límites del mapa   : se aprenden de los bordes percibidos (None).
-"""
+
 
 from entorno import Agente
 import heapq
@@ -29,7 +21,7 @@ class MiAgente(Agente):
     PENALIZACION = 5   # costo extra por cada visita previa a una celda
 
     def __init__(self):
-        super().__init__(nombre="Agente Basado en Utilidad (A*)")
+        super().__init__(nombre="Agente con utilidad A*")
         self.mapa     = {}   # (r,c) -> 'libre' | 'pared' | 'meta'
         self.meta_pos = None # posición exacta de la meta
         self.plan     = []   # lista de posiciones a seguir
@@ -88,7 +80,7 @@ class MiAgente(Agente):
                 return d
             self.plan = []   # paso inválido → replanificar luego
 
-        # 7. Fallback: celda accesible menos visitada
+        # celda accesible menos visitada
         return self._fallback(pos, percepcion)
 
     # ----------------------------------------------------------
