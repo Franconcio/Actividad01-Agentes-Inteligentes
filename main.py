@@ -15,7 +15,7 @@ from mi_agente import MiAgente
 # ── Configuración del mapa ───────────────────────
 FILAS     = 10       # Alto del mapa
 COLUMNAS  = 10       # Ancho del mapa
-SEMILLA = random.randint(0,10000)      # Cambiar para generar otro mapa
+SEMILLA = random.randint(0,10000)      # Randomizar para que sean mapas aleatorios
 PAREDES   = 0.30     # Porcentaje de paredes (0.0 a 0.40)
 VELOCIDAD = 0.15     # Segundos entre pasos (menor = más rápido)
 MAX_PASOS = 50      # Máximo de pasos antes de rendirse
